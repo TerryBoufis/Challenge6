@@ -1,111 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style.css">
     <title>Weather Forecast</title>
 </head>
 <header>
     <div class="jumbotron-container">
-       <div class=" jumbotron-fluid bg-dark text-white text-center">
-         <div class="container">
-           <h1 class="display">Weather Dashboard</h1>
-         </div>
-       </div>
+        <div class=" jumbotron-fluid bg-dark text-white text-center">
+            <div class="container">
+                <h1 class="display">Weather Dashboard</h1>
+            </div>
+        </div>
 </header>
 
 <body>
+
     <left>
         <h2 id="para1"> City Search</h2>
         <p id="inputContaniner">City: <input type="text" id="cityInput"></p>
-        <button>Search</button>
-        <h2 id="CityName">Chicago</h2>
+        <button id="search">Search</button>
+        <ul id = "searchHistory"></ul>
+        <h2 id="cityName"></h2>
     </left>
-    <div class="container">
+    <div class="city-container">
         <div class="current-info">
 
         </div class="date-container">
-            <div class="time" id="time">
-                12:25 <span id="am-pm"></span>
-            </div>
-                <div class="date" id="date">
-                    Monday, October 10
-                </div>
-            <div class="other" id="current-weather-items">
-                <div class="weather-info">
-                    <div>Humidity</div>
-                    <div>12%</div>
-                </div>
-                <div class="weather-item">
-                    <div>Pressure</div>
-                    <div>12%</div>
-                </div>
-                <div class="weather-item">
-                    <div>Wind Speed</div>
-                    <div>12%</div>
-                </div>
-            </div>
+        <div class="time" id="time">
+            <span id="am-pm"></span>
         </div>
-
-        <div class="place-container">
-            <div class="time-zone" id="time-zone">CMT</div>
-            <div class="country" id="country">USA</div>
+        <div class="date" id="date">
+            
         </div>
+        <div class="other" id="current-weather-items">
+<!--         
+            <div class="weather-item">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="weather-item">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="weather-item">
+                <div>Wind Speed</div>
+                <div>12%</div>
+            </div> -->
+        </div>
+    </div>
 
-        <div class="future-forecast">
-            <div class="today" id="current-temp">
+    <div class="place-container">
+        <div class="time-zone" id="time-zone"></div>
+        <div class="country" id="country"></div>
+    </div>
+
+    <div class="future-forecast">
+        <div class="weather-forecast" id="weather-forecast">
+            <!-- <div class="weather-forecast-item">
+                <div class="day">Tuesday</div>
                 <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
-            <div class="day">Monday</div>
-            <div class="temp">Night -43&#176; F</div>
-            <div class="temp">Day -63&#176; F</div>
+                <div class="temp">Night -43&#176; F</div>
+                <div class="temp">Day -63&#176; F</div>
             </div>
-
-            <div class="weather-forecast" id="weather-forecast">
-                <div class="weather-forecast-item">
-                    <div class="day">Tuesday</div>
-                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
-                    <div class="temp">Night -43&#176; F</div>
-                    <div class="temp">Day -63&#176; F</div>
-                </div>
-                <div class="weather-forecast-item">
-                    <div class="day">Wednesday</div>
-                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
-                    <div class="temp">Night -43&#176; F</div>
-                    <div class="temp">Day -63&#176; F</div>
-                </div>
-                <div class="weather-forecast-item">
-                    <div class="day">Thursday</div>
-                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
-                    <div class="temp">Night -43&#176; F</div>
-                    <div class="temp">Day -63&#176; F</div>
-                </div>
-                <div class="weather-forecast-item">
-                    <div class="day">Friday</div>
-                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
-                    <div class="temp">Night -43&#176; F</div>
-                    <div class="temp">Day -63&#176; F</div>
-                </div>
-                <div class="weather-forecast-item">
-                    <div class="day">Saturday</div>
-                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
-                    <div class="temp">Night -43&#176; F</div>
-                    <div class="temp">Day -63&#176; F</div>
-                </div>
-                <div class="weather-forecast-item">
-                    <div class="day">Sunday</div>
-                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
-                    <div class="temp">Night -43&#176; F</div>
-                    <div class="temp">Day -63&#176; F</div>
-                </div>
+            <div class="weather-forecast-item">
+                <div class="day">Wednesday</div>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
+                <div class="temp">Night -43&#176; F</div>
+                <div class="temp">Day -63&#176; F</div>
             </div>
+            <div class="weather-forecast-item">
+                <div class="day">Thursday</div>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
+                <div class="temp">Night -43&#176; F</div>
+                <div class="temp">Day -63&#176; F</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">Friday</div>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
+                <div class="temp">Night -43&#176; F</div>
+                <div class="temp">Day -63&#176; F</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">Saturday</div>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
+                <div class="temp">Night -43&#176; F</div>
+                <div class="temp">Day -63&#176; F</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">Sunday</div>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
+                <div class="temp">Night -43&#176; F</div>
+                <div class="temp">Day -63&#176; F</div> -->
+            <!-- </div> -->
         </div>
+    </div>
 
 
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
     <script src="assets/script.js"></script>
 </body>
+
 </html>
