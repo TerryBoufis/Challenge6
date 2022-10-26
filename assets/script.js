@@ -49,7 +49,7 @@ function populateSearch() {
 document.getElementById("search").addEventListener("click", function () { startSearch(userCityInput.value) })
 
 function startSearch(cityToSearch) {
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityToSearch}&appid=${API_Key}`)
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityToSearch}&appid=${API_Key}`)
         .then(function (response) {
             return response.json();
         }).then(function (data) {
@@ -138,7 +138,7 @@ function startSearch(cityToSearch) {
         const icon = data.weather[0].icon;
 
         currentWeatherItemsEl.innerHTML =
-            `<img src="http://openweathermap.org/img/wn/${icon}@2x.png" alt="weather-icon" class="w-icon"></img>
+            `<img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="weather-icon" class="w-icon"></img>
                 <div class="weather-item">
                     <div>Temp</div>
                     <div>${temp}&#176 F</div>
