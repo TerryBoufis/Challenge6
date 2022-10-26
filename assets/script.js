@@ -50,6 +50,7 @@ document.getElementById("search").addEventListener("click", function () { startS
 
 function startSearch(cityToSearch) {
     fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityToSearch}&appid=${API_Key}`)
+
         .then(function (response) {
             return response.json();
         }).then(function (data) {
@@ -108,7 +109,7 @@ function startSearch(cityToSearch) {
                 const div = document.createElement('div')
                 div.classList.add('weather-forecast-item')
                 div.innerHTML = `<div class="day">${new Date(day * 1000).toLocaleString("en-US", { weekday: 'long' })}</div>
-                   <img src="http://openweathermap.org/img/wn/${icon}@2x.png" alt="weather-icon" class="w-icon">
+                   <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="weather-icon" class="w-icon">
                    <div class="weather-item">
                     <div>Temp</div>
                     <div>${temp}&#176 F</div>
@@ -139,6 +140,7 @@ function startSearch(cityToSearch) {
 
         currentWeatherItemsEl.innerHTML =
             `<img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="weather-icon" class="w-icon"></img>
+
                 <div class="weather-item">
                     <div>Temp</div>
                     <div>${temp}&#176 F</div>
